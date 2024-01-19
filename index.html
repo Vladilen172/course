@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Поиск пешеходного туристического маршрута</title>
+  </head>
+  <body>
+    <header>
+        <nav>
+            <div class="container-header">
+                <div class="container-logo">
+                    <img src="https://cdn4.iconfinder.com/data/icons/navigation-set/128/Location-1024.png" alt="Логотип" width="50px">
+                    <a href="#">Moscow <br>Guide</a>
+                </div>
+                <div class="content-header">
+                    <a href="#">Home</a>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Disabled</a>
+                </div>
+                <div>
+                    <select name="language" id="language">
+                        <option value="RU">RU</option>
+                        <option value="ENG">ENG</option>
+                    </select>
+                    <a href="#"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div>
+                <p><strong>Новое сообщение!</strong> Авторизируетесь в личном кабинете.</p>
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="information">
+            <img src="https://sportishka.com/uploads/posts/2022-04/1650688081_32-sportishka-com-p-moskva-siti-rossiya-krasivo-foto-35.jpg" 
+            alt="Фотография Москвы" width="400px">
+            <div class="text-information">
+                <h2>Информация о компании</h2>
+                <p>"Moscow Guide" - эксперты по пешеходным туристическим маршрутам по Москве! Наша цель - сделать 
+                    ваше путешествие незабываемым, предоставляя вам настоящее гидовое сопровождение от опытных 
+                    профессионалов. Мы стремимся показать вам все прекрасные и уникальные места Москвы в наиболее 
+                    удобной, интересной и безопасной форме. Служба Moscow Guide является вашим надежным партнером 
+                    в организации пешеходных туристических маршрутов.
+                </p>
+                <figure class="quote">
+                    <q>Ноги в руки и вперёд!</q>
+                    <figcaption>
+                        &mdash; <cite>Русская поговорка</cite>  
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Почему именно мы?</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Богатый опыт и знание</h3>
+                    <br>
+                    <p>"Moscow Guide" имеет богатый опыт и прекрасное знание о Москве и ее 
+                        достопримечательностях. Мы имеем команду экспертов, специализирующихся
+                         на исторических, культурных и архитектурных особенностях города. Это 
+                         позволяет компании предоставлять высококачественные услуги, включающие 
+                         основные достопримечательности и скрытые гемы, которые могут быть упущены 
+                         другими туристами.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Персональный подход</h3>
+                    <br>
+                    <p>Услуги "Moscow Guide" предлагают персонализированный подход, учитывающий интересы 
+                        и предпочтения каждого клиента. Компания предлагает различные туры и экскурсии, 
+                        которые могут быть настроены и адаптированы под индивидуальные потребности каждого 
+                        туриста. Это позволяет клиентам получить максимальное удовлетворение от своего 
+                        путешествия и ощутить уникальность Москвы в соответствии с их личными интересами.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Надежность</h3>
+                    <br>
+                    <p>"Moscow Guide" обеспечивает высокий уровень безопасности и надежности всем клиентам. 
+                        Они имеют лицензированных и опытных гидов, которые гарантируют безопасность группы 
+                        во время экскурсий. Кроме того, компания также предлагает услуги трансфера и 
+                        организации проживания, обеспечивая, чтобы клиенты были защищены и уверены во время 
+                        своего пребывания в Москве. Это позволяет клиентам полностью насладиться своим 
+                        отдыхом и избежать волнений, связанных с практическими вопросами.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="roads" id="roads">
+            <h2>Маршруты</h2> 
+            <div class="container mt-5">
+                  <div class="row">
+                    <div class="col">
+                      <div class="mb-3">
+                        <input type="text" class="form-control" id="tableSearchInput" placeholder="Поиск по названию" oninput="searchTable()">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Выберите объект...</option>
+                      </select>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block">Очистить название и объект</button>
+                </div>
+            </div>
+  
+            <div class="table-container table-center">
+            <table class="tour road">
+              <thead>
+                <tr>
+                  <th scope="col">Название</th>
+                  <th scope="col">Описание</th>
+                  <th scope="col">Основные объекты</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="tbody">
+              </tbody>
+            </table>
+          </div>
+  
+          <div class="paginat table-center">
+            <div class="pagination">
+          </div>
+          </div>
+          
+          <h3>Доступные гиды по маршруту</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ФИО</th>
+                <th scope="col">Языки</th>
+                <th scope="col">Опыт работы</th>
+                <th scope="col">Стоимость услуг в час</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="tbody-guids">
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Оформление заявки</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                
+                <p class="excursion"></p>
+               
+  
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td><p class="guidname"></p></td>
+                    </tr>
+                    <tr>
+                      <td><p class="roadname"></p></td>
+                    </tr>
+                    <tr>
+                      <td><p class="roadname"></p></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+  
+  
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">Закрыть</button>
+                <button type="button" class="btn btn-primary" id="bookBtn">Забронировать</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3>Откуда вы хотите начать путешествие</h3>
+            <input class="form-control" type="text" placeholder="Default input" aria-label="deafult input example">
+            <button type="button" class="btn btn-primary btn-lg">Большая кнопка</button>
+          </div>
+
+    </main>
+    <footer>
+        <h3>Как с нами связаться</h3>
+        <ul class="footer-container">
+            <li>Адрес: <br>г. Москва, улица Знаменка, 19</li>
+            <li>Электронная почта: <br>vladilen.ivanov.04@mail.ru</li>
+            <li>Телефон: <br>+7-926-353-23-25</li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/6d245eb64d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+        crossorigin="anonymous">
+    </script>
+  </body>
+</html>
